@@ -7,19 +7,12 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #f9f9f7;
-    --surface: #ffffff;
-    --text: #1a1a1a;
-    --muted: #666;
-    --accent: #2563eb;
-    --accent-light: #eff6ff;
-    --border: #e5e5e5;
-    --radius: 12px;
+    --bg: #f9f9f7; --surface: #ffffff; --text: #1a1a1a; --muted: #666;
+    --accent: #2563eb; --accent-light: #eff6ff; --border: #e5e5e5; --radius: 12px;
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'Georgia', serif; background: var(--bg); color: var(--text); line-height: 1.7; }
 
-  /* NAV */
   nav {
     position: sticky; top: 0; z-index: 100;
     background: rgba(249,249,247,0.92); backdrop-filter: blur(8px);
@@ -28,123 +21,89 @@
     padding: 0 2rem; height: 56px;
   }
   nav .logo { font-family: sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: -.5px; }
-  nav ul { list-style: none; display: flex; gap: 1.8rem; }
-  nav a { text-decoration: none; color: var(--muted); font-family: sans-serif; font-size: .85rem; letter-spacing: .5px; text-transform: uppercase; transition: color .2s; }
+  nav ul { list-style: none; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  nav a { text-decoration: none; color: var(--muted); font-family: sans-serif; font-size: .8rem; letter-spacing: .5px; text-transform: uppercase; transition: color .2s; }
   nav a:hover { color: var(--accent); }
 
-  /* HERO */
   .hero {
     max-width: 860px; margin: 0 auto; padding: 5rem 2rem 3rem;
     display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
   }
+  .hero-text .role { font-family: sans-serif; font-size: .9rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin: .8rem 0 1.2rem; }
   .hero-text h1 { font-size: 2.6rem; font-weight: normal; letter-spacing: -1px; line-height: 1.2; }
   .hero-text h1 span { color: var(--accent); }
-  .hero-text .role {
-    font-family: sans-serif; font-size: .9rem; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 2px; margin: .8rem 0 1.2rem;
-  }
-  .hero-text p { color: #444; font-size: 1.05rem; max-width: 520px; }
+  .hero-text p { color: #444; font-size: 1.05rem; max-width: 520px; margin-top: 1rem; }
   .hero-links { display: flex; gap: .8rem; margin-top: 1.5rem; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: .4rem;
-    padding: .5rem 1.1rem; border-radius: 6px; font-family: sans-serif;
-    font-size: .85rem; text-decoration: none; font-weight: 600; transition: all .2s;
-  }
+  .btn { display: inline-flex; align-items: center; gap: .4rem; padding: .5rem 1.1rem; border-radius: 6px; font-family: sans-serif; font-size: .85rem; text-decoration: none; font-weight: 600; transition: all .2s; }
   .btn-primary { background: var(--accent); color: #fff; }
   .btn-primary:hover { background: #1d4ed8; }
   .btn-outline { border: 1.5px solid var(--border); color: var(--text); background: var(--surface); }
   .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-  .hero-avatar img {
-    width: 160px; height: 160px; border-radius: 50%;
-    object-fit: cover; border: 3px solid var(--border);
-    display: block;
-  }
-  .hero-avatar .avatar-placeholder {
-    width: 160px; height: 160px; border-radius: 50%;
-    background: var(--accent-light); border: 3px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3rem; color: var(--accent);
-  }
+  .hero-avatar img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: top; border: 3px solid var(--border); display: block; }
+  .avatar-placeholder { width: 160px; height: 160px; border-radius: 50%; background: var(--accent-light); border: 3px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent); }
 
-  /* SECTIONS */
   section { max-width: 860px; margin: 0 auto; padding: 3rem 2rem; border-top: 1px solid var(--border); }
   h2 { font-size: 1.4rem; font-weight: normal; letter-spacing: -0.5px; margin-bottom: 1.5rem; }
   h2 span { color: var(--accent); }
 
-  /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
   .about-grid p { color: #444; font-size: 1rem; }
   .info-list { list-style: none; }
-  .info-list li { display: flex; gap: .8rem; padding: .5rem 0; border-bottom: 1px solid var(--border); font-family: sans-serif; font-size: .9rem; }
+  .info-list li { display: flex; gap: .8rem; padding: .5rem 0; border-bottom: 1px solid var(--border); font-family: sans-serif; font-size: .88rem; }
   .info-list li:last-child { border-bottom: none; }
-  .info-list .label { color: var(--muted); min-width: 80px; }
+  .info-list .label { color: var(--muted); min-width: 90px; flex-shrink: 0; }
 
-  /* RESEARCH CHIPS */
   .chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .5rem; }
-  .chip {
-    background: var(--accent-light); color: var(--accent);
-    border-radius: 20px; padding: .35rem .9rem;
-    font-family: sans-serif; font-size: .82rem; font-weight: 600;
-  }
+  .chip { background: var(--accent-light); color: var(--accent); border-radius: 20px; padding: .35rem .9rem; font-family: sans-serif; font-size: .82rem; font-weight: 600; }
 
-  /* POSITIONS */
   .positions { display: flex; flex-direction: column; gap: 1.2rem; }
-  .position-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.2rem 1.5rem;
-    display: grid; grid-template-columns: auto 1fr; gap: .8rem 1.2rem; align-items: start;
-  }
-  .position-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: .55rem; }
+  .position-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.5rem; display: grid; grid-template-columns: auto 1fr; gap: .8rem 1.2rem; align-items: start; }
+  .position-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: .55rem; flex-shrink: 0; }
   .position-card h3 { font-size: 1rem; font-weight: 600; font-family: sans-serif; }
-  .position-card .org { color: var(--muted); font-family: sans-serif; font-size: .88rem; margin-top: .2rem; }
+  .position-card .org { color: var(--muted); font-family: sans-serif; font-size: .85rem; margin-top: .2rem; }
+  .position-card .since { font-family: sans-serif; font-size: .78rem; color: var(--accent); margin-top: .3rem; font-weight: 600; }
 
-  /* AWARDS */
-  .award-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.2rem 1.5rem;
-    display: flex; gap: 1rem; align-items: flex-start;
-  }
-  .award-icon { font-size: 1.6rem; }
-  .award-card h3 { font-size: 1rem; font-weight: 600; font-family: sans-serif; }
-  .award-card p { color: var(--muted); font-family: sans-serif; font-size: .88rem; margin-top: .2rem; }
+  .edu-list { display: flex; flex-direction: column; gap: 1rem; }
+  .edu-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.4rem; display: grid; grid-template-columns: auto 1fr; gap: .5rem 1rem; align-items: start; }
+  .edu-year { font-family: sans-serif; font-size: .8rem; color: var(--muted); white-space: nowrap; padding-top: .2rem; }
+  .edu-card h3 { font-family: sans-serif; font-size: .95rem; font-weight: 600; }
+  .edu-card p { font-family: sans-serif; font-size: .85rem; color: var(--muted); margin-top: .15rem; }
 
-  /* PUBLICATIONS */
   .pub-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.5rem; }
-  .stat-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.2rem; text-align: center;
-  }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; text-align: center; }
   .stat-card .num { font-size: 2rem; font-weight: 700; color: var(--accent); font-family: sans-serif; }
   .stat-card .lbl { font-family: sans-serif; font-size: .82rem; color: var(--muted); margin-top: .2rem; }
+
+  .pub-list { display: flex; flex-direction: column; gap: .7rem; margin-bottom: 1.5rem; }
+  .pub-item { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1.2rem; font-family: sans-serif; font-size: .85rem; }
+  .pub-item .pub-num { color: var(--accent); font-weight: 700; margin-right: .4rem; }
+  .pub-item .pub-title { font-weight: 600; display: block; margin-bottom: .15rem; }
+  .pub-item .pub-journal { color: var(--muted); font-size: .8rem; }
+  .pub-item .pub-status { display: inline-block; background: #fef3c7; color: #92400e; border-radius: 4px; padding: .1rem .4rem; font-size: .75rem; font-weight: 600; margin-left: .4rem; }
   .pub-links { display: flex; gap: .8rem; flex-wrap: wrap; }
 
-  /* CONTACT */
+  .grants-list { display: flex; flex-direction: column; gap: .8rem; }
+  .grant-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1.2rem; display: grid; grid-template-columns: auto 1fr; gap: .5rem 1rem; font-family: sans-serif; font-size: .85rem; }
+  .grant-years { color: var(--muted); font-size: .8rem; white-space: nowrap; padding-top: .15rem; }
+  .grant-card h3 { font-size: .9rem; font-weight: 600; }
+  .grant-card p { color: var(--muted); font-size: .82rem; }
+
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .contact-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.2rem 1.5rem;
-    text-decoration: none; color: var(--text); transition: all .2s;
-    display: flex; align-items: center; gap: 1rem;
-  }
+  .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.5rem; text-decoration: none; color: var(--text); transition: all .2s; display: flex; align-items: center; gap: 1rem; }
   .contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
   .contact-card .icon { font-size: 1.4rem; }
   .contact-card h3 { font-family: sans-serif; font-size: .9rem; font-weight: 600; }
   .contact-card p { font-family: sans-serif; font-size: .82rem; color: var(--muted); }
 
-  /* FOOTER */
-  footer {
-    text-align: center; padding: 2rem;
-    font-family: sans-serif; font-size: .82rem; color: var(--muted);
-    border-top: 1px solid var(--border);
-  }
+  footer { text-align: center; padding: 2rem; font-family: sans-serif; font-size: .82rem; color: var(--muted); border-top: 1px solid var(--border); }
 
   @media (max-width: 640px) {
     .hero { grid-template-columns: 1fr; text-align: center; }
     .hero-avatar { order: -1; margin: 0 auto; }
     .hero-links { justify-content: center; }
-    .hero-text p { margin: 0 auto; }
+    .hero-text p { margin: 1rem auto 0; }
     .about-grid, .contact-grid, .pub-stats { grid-template-columns: 1fr; }
-    nav ul { gap: 1rem; }
+    nav ul { gap: .8rem; }
   }
 </style>
 </head>
@@ -157,6 +116,7 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#positions">Positions</a></li>
     <li><a href="#publications">Publications</a></li>
+    <li><a href="#grants">Grants</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -168,12 +128,12 @@
     <p>Argentine physicist specializing in Quantum Chaos, Complex Networks, and Quantum Information. Head of the Department of Theoretical Physics at CNEA and Independent Researcher at CONICET.</p>
     <div class="hero-links">
       <a href="https://scholar.google.com/citations?user=QEZqKeEAAAAJ&hl=en" class="btn btn-primary" target="_blank">Google Scholar</a>
-      <a href="https://arxiv.org/search/?searchtype=author&query=Ermann%2C+L" class="btn btn-outline" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/search/?searchtype=author&query=Ermann%2C+L&start=0" class="btn btn-outline" target="_blank">arXiv</a>
       <a href="CV-Ermann.pdf" class="btn btn-outline" target="_blank">Download CV</a>
     </div>
   </div>
   <div class="hero-avatar">
-    <div class="avatar-placeholder">LE</div>
+    <img src="photo.png" alt="Leonardo Ermann" onerror="this.outerHTML='<div class=&quot;avatar-placeholder&quot;>LE</div>'">
   </div>
 </div>
 
@@ -183,14 +143,18 @@
     <div>
       <p>I am an Argentine physicist working at the intersection of quantum mechanics, chaos theory, and complex systems. My research explores how classical chaos manifests in quantum systems and how information propagates through complex networks.</p>
       <br>
-      <p>I hold a PhD in Physical Sciences from the Universidad de Buenos Aires (UBA) and have conducted postdoctoral research and multiple guest researcher stays at the Laboratoire de Physique Théorique (Université Paul Sabatier) in Toulouse, France, in collaboration with Prof. Dima Shepelyansky.</p>
+      <p>I hold a PhD in Physical Sciences from the Universidad de Buenos Aires (UBA, 2009) and conducted postdoctoral research at the Laboratoire de Physique Théorique (Université Paul Sabatier, Toulouse) in collaboration with Prof. Dima Shepelyansky, with numerous subsequent guest researcher stays.</p>
+      <br>
+      <p>In 2012 I was a Science writer for Canal Encuentro's "Proyecto G" program (5 episodes, 5M+ YouTube views).</p>
     </div>
     <ul class="info-list">
-      <li><span class="label">PhD</span> Universidad de Buenos Aires</li>
-      <li><span class="label">Postdoc</span> Univ. Paul Sabatier, Toulouse</li>
+      <li><span class="label">PhD</span> Universidad de Buenos Aires (2009)</li>
+      <li><span class="label">Licenciatura</span> Universidad de Buenos Aires (2005)</li>
+      <li><span class="label">Postdoc</span> Univ. Paul Sabatier, Toulouse (2009–2011)</li>
       <li><span class="label">Award</span> Stimulus Prize – ANCEFN (2019)</li>
-      <li><span class="label">Papers</span> 55+ in international journals</li>
-      <li><span class="label">Role</span> Reviewer for scientific journals</li>
+      <li><span class="label">Papers</span> 58 in international journals</li>
+      <li><span class="label">Languages</span> Spanish, English (advanced), French (intermediate)</li>
+      <li><span class="label">Phone</span> (+54) 11 6772 7055</li>
     </ul>
   </div>
 </section>
@@ -208,6 +172,8 @@
     <span class="chip">Decoherence</span>
     <span class="chip">Classical–Quantum Transition</span>
     <span class="chip">Nano & Mesoscopic Systems</span>
+    <span class="chip">Google Matrix Analysis</span>
+    <span class="chip">Bose-Einstein Condensates</span>
   </div>
 </section>
 
@@ -218,21 +184,51 @@
       <div class="position-dot"></div>
       <div>
         <h3>Head of Department of Theoretical Physics of Fundamental Interactions and Complex Systems</h3>
-        <div class="org">Gerencia de Investigación y Aplicaciones (Tandar Laboratory) · CNEA · Buenos Aires, Argentina</div>
+        <div class="org">Gerencia Investigación y Aplicaciones "Laboratorio TANDAR" (CAC) · CNEA · Buenos Aires, Argentina</div>
+        <div class="since">Since March 2013</div>
       </div>
     </div>
     <div class="position-card">
       <div class="position-dot"></div>
       <div>
-        <h3>Independent Researcher</h3>
+        <h3>Independent Researcher – CIC</h3>
         <div class="org">National Scientific and Technical Research Council (CONICET) · Argentina</div>
+        <div class="since">Since March 2013 (promoted to Independent Nov. 2020)</div>
       </div>
     </div>
     <div class="position-card">
       <div class="position-dot"></div>
       <div>
         <h3>Adjunct Professor</h3>
-        <div class="org">National University of San Martín (UNSAM) · Buenos Aires, Argentina</div>
+        <div class="org">IIB-ECyT · National University of San Martín (UNSAM) · Buenos Aires, Argentina</div>
+        <div class="since">Since May 2019</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:2rem;">Academic <span>training</span></h2>
+  <div class="edu-list">
+    <div class="edu-card">
+      <div class="edu-year">2005–2009</div>
+      <div>
+        <h3>PhD in Physical Sciences</h3>
+        <p>Universidad de Buenos Aires · Director: Prof. Marcos Saraceno<br>
+        <em>Disipación, transporte y localización en cadenas periódicas de mapas cuánticos caóticos</em></p>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">1999–2005</div>
+      <div>
+        <h3>Licenciado en Ciencias Físicas</h3>
+        <p>Universidad de Buenos Aires · Director: Prof. Marcos Saraceno</p>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2009–2011</div>
+      <div>
+        <h3>Postdoctoral Researcher</h3>
+        <p>Laboratoire de Physique Théorique, UMR 5152 du CNRS – Université Paul Sabatier, Toulouse, France<br>
+        Quantum Coherence Group (Prof. D. Shepelyansky)</p>
       </div>
     </div>
   </div>
@@ -242,7 +238,7 @@
   <h2>Publications &amp; <span>output</span></h2>
   <div class="pub-stats">
     <div class="stat-card">
-      <div class="num">55+</div>
+      <div class="num">58</div>
       <div class="lbl">Scientific papers</div>
     </div>
     <div class="stat-card">
@@ -250,32 +246,127 @@
       <div class="lbl">Stimulus Prize – ANCEFN</div>
     </div>
     <div class="stat-card">
-      <div class="num">∞</div>
-      <div class="lbl">Active reviewer</div>
+      <div class="num">5M+</div>
+      <div class="lbl">YouTube views (Canal Encuentro)</div>
     </div>
   </div>
-  <p style="color:#444; margin-bottom:1.2rem;">All publications are freely accessible via Google Scholar and arXiv preprints.</p>
+
+  <p style="color:#444; margin-bottom:1rem; font-family:sans-serif; font-size:.9rem;">Recent and selected publications:</p>
+  <div class="pub-list">
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">58.</span> Boltzmann-Loschmidt dispute reloaded quantum 150 years later <span class="pub-status">submitted</span></span>
+      <span class="pub-journal">L. Ermann, A.D. Chepelianskii, D.L. Shepelyansky · Physical Review Letters</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">56.</span> Dynamical thermalization, Rayleigh–Jeans condensate, vortexes and wave collapse in quantum chaos fibers and fluid of light</span>
+      <span class="pub-journal">L. Ermann, A.D. Chepelianskii, D.L. Shepelyansky · J. Phys. A: Math. Theor. 59 055702 (2026)</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">55.</span> Opinion Formation in Wikipedia Ising Networks</span>
+      <span class="pub-journal">L. Ermann, K.M. Frahm, D.L. Shepelyansky · Information 16(9), 782 (2025)</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">54.</span> Ideal Gas Law for a Quantum Particle</span>
+      <span class="pub-journal">A.M.F. Rivas, E. Vergini, L. Ermann, G.G. Carlo · Phys. Rev. E 112, 014223 (2025)</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">35.</span> Kolmogorov turbulence defeated by Anderson localization for a Bose-Einstein condensate in a Sinai-oscillator trap</span>
+      <span class="pub-journal">L. Ermann, E. Vergini, D.L. Shepelyansky · Phys. Rev. Lett. 119, 054103 (2017)</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">29.</span> Google matrix analysis of directed networks</span>
+      <span class="pub-journal">L. Ermann, K.M. Frahm, D.L. Shepelyansky · Rev. Mod. Phys. 87, 1261 (2015)</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">7.</span> Localization of resonance eigenfunction on quantum repellers</span>
+      <span class="pub-journal">L. Ermann, G.G. Carlo, M. Saraceno · Phys. Rev. Lett. 103, 054102 (2009)</span>
+    </div>
+  </div>
+
   <div class="pub-links">
-    <a href="https://scholar.google.com/citations?user=QEZqKeEAAAAJ&hl=en" class="btn btn-primary" target="_blank">View on Google Scholar</a>
-    <a href="https://arxiv.org/search/?searchtype=author&query=Ermann%2C+L" class="btn btn-outline" target="_blank">arXiv preprints</a>
+    <a href="https://scholar.google.com/citations?user=QEZqKeEAAAAJ&hl=en" class="btn btn-primary" target="_blank">Google Scholar</a>
+    <a href="https://arxiv.org/search/?searchtype=author&query=Ermann%2C+L&start=0" class="btn btn-outline" target="_blank">arXiv</a>
+    <a href="https://drive.google.com/drive/folders/1W4shplfW7bq_U6JGa0gOjApxLMnr9IBS?usp=drive_link" class="btn btn-outline" target="_blank">📁 Paper Repository (Drive)</a>
+  </div>
+</section>
+
+<section id="grants">
+  <h2>Grants &amp; <span>funding</span></h2>
+  <div class="grants-list">
+    <div class="grant-card">
+      <div class="grant-years">2022–2024</div>
+      <div>
+        <h3>PIP CONICET – Principal Investigator</h3>
+        <p>PIP:11220210100208CO · Complejidad clásica y cuántica</p>
+      </div>
+    </div>
+    <div class="grant-card">
+      <div class="grant-years">2019–2022</div>
+      <div>
+        <h3>PICT – FONCYT – Principal Investigator</h3>
+        <p>PICT-2018-02331 · Estudio del Caos y Aplicaciones a Sistemas de Comunicaciones Digitales</p>
+      </div>
+    </div>
+    <div class="grant-card">
+      <div class="grant-years">2017–2020</div>
+      <div>
+        <h3>T-AP Trans-Atlántica "Digging into Data"</h3>
+        <p>Understanding opinion and language dynamics using massive data</p>
+      </div>
+    </div>
+    <div class="grant-card">
+      <div class="grant-years">2015–2017</div>
+      <div>
+        <h3>PICT Agencia – Junior Investigator</h3>
+        <p>PICT-2014-2243 · Transporte y redes complejas</p>
+      </div>
+    </div>
+    <div class="grant-card">
+      <div class="grant-years">2009–2011</div>
+      <div>
+        <h3>ANR–CNRS Postdoctoral Fellowship</h3>
+        <p>Projet NANOTERRA · Toulouse, France</p>
+      </div>
+    </div>
+    <div class="grant-card">
+      <div class="grant-years">2005–2009</div>
+      <div>
+        <h3>CONICET Doctoral Fellowship (Type I)</h3>
+        <p>Buenos Aires, Argentina</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="contact">
   <h2>Get in <span>touch</span></h2>
   <div class="contact-grid">
-    <a href="https://www.argentina.gob.ar/cnea" class="contact-card" target="_blank">
+    <a href="mailto:leonardoermann@cnea.gob.ar" class="contact-card">
+      <div class="icon">✉️</div>
+      <div>
+        <h3>Email</h3>
+        <p>leonardoermann@cnea.gob.ar</p>
+      </div>
+    </a>
+    <a href="https://www.argentina.gob.ar/cnea/cac/laboratorios-e-instalaciones/fisica/teorica" class="contact-card" target="_blank">
       <div class="icon">🏛️</div>
       <div>
-        <h3>CNEA</h3>
-        <p>Tandar Laboratory, Buenos Aires</p>
+        <h3>CNEA – Tandar Lab</h3>
+        <p>Av. Gral Paz 1499, San Martín, Buenos Aires</p>
       </div>
     </a>
     <a href="https://www.conicet.gov.ar/" class="contact-card" target="_blank">
       <div class="icon">🔬</div>
       <div>
         <h3>CONICET</h3>
-        <p>Independent Researcher profile</p>
+        <p>Independent Researcher – CIC</p>
+      </div>
+    </a>
+    <a href="https://www.unsam.edu.ar/escuelas/ecyt/" class="contact-card" target="_blank">
+      <div class="icon">🎓</div>
+      <div>
+        <h3>ECyT – UNSAM</h3>
+        <p>Adjunct Professor</p>
       </div>
     </a>
     <a href="https://scholar.google.com/citations?user=QEZqKeEAAAAJ&hl=en" class="contact-card" target="_blank">
@@ -285,11 +376,11 @@
         <p>Publication list & citations</p>
       </div>
     </a>
-    <a href="https://arxiv.org/search/?searchtype=author&query=Ermann%2C+L" class="contact-card" target="_blank">
-      <div class="icon">📄</div>
+    <a href="https://drive.google.com/drive/folders/1W4shplfW7bq_U6JGa0gOjApxLMnr9IBS?usp=drive_link" class="contact-card" target="_blank">
+      <div class="icon">📁</div>
       <div>
-        <h3>arXiv</h3>
-        <p>Open access preprints</p>
+        <h3>Paper Repository</h3>
+        <p>Google Drive</p>
       </div>
     </a>
   </div>
