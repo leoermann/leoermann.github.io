@@ -81,6 +81,16 @@
   .pub-item .pub-journal { color: var(--muted); font-size: .8rem; }
   .pub-item .pub-status { display: inline-block; background: #fef3c7; color: #92400e; border-radius: 4px; padding: .1rem .4rem; font-size: .75rem; font-weight: 600; margin-left: .4rem; }
   .pub-links { display: flex; gap: .8rem; flex-wrap: wrap; }
+  .pub-item a { color: inherit; text-decoration: none; }
+  .pub-item a:hover { color: var(--accent); text-decoration: underline; }
+  .pub-item .pub-journal b { color: var(--text); font-weight: 600; }
+  .pub-item .pub-cites { display: inline-block; margin-left: .6rem; font-size: .75rem; color: var(--accent); font-weight: 600; }
+  .pub-subhead { font-family: sans-serif; font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; margin: 1.5rem 0 .7rem; }
+  .metrics-note { font-family: sans-serif; font-size: .8rem; color: var(--muted); margin: -.6rem 0 1.5rem; }
+  .metrics-note a { color: var(--accent); }
+  details.pub-all { margin-bottom: 1.5rem; }
+  details.pub-all summary { cursor: pointer; font-family: sans-serif; font-size: .9rem; font-weight: 600; color: var(--accent); padding: .6rem 0; }
+  details.pub-all .pub-list { margin-top: .5rem; }
 
   .grants-list { display: flex; flex-direction: column; gap: .8rem; }
   .grant-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1.2rem; display: grid; grid-template-columns: auto 1fr; gap: .5rem 1rem; font-family: sans-serif; font-size: .85rem; }
@@ -103,6 +113,7 @@
     .hero-links { justify-content: center; }
     .hero-text p { margin: 1rem auto 0; }
     .about-grid, .contact-grid, .pub-stats { grid-template-columns: 1fr; }
+    .pub-stats { grid-template-columns: 1fr 1fr; }
     nav ul { gap: .8rem; }
   }
 </style>
@@ -152,7 +163,7 @@
       <li><span class="label">Licenciatura</span> Universidad de Buenos Aires (2005)</li>
       <li><span class="label">Postdoc</span> Univ. Paul Sabatier, Toulouse (2009–2011)</li>
       <li><span class="label">Award</span> Stimulus Prize – ANCEFN (2019)</li>
-      <li><span class="label">Papers</span> 58 in international journals</li>
+      <li><span class="label">Papers</span> <!--AUTO:N_PAPERS-->60<!--/AUTO:N_PAPERS--> in international journals</li>
       <li><span class="label">Languages</span> Spanish, English (advanced), French (intermediate)</li>
       <li><span class="label">Phone</span> (+54) 11 6772 7055</li>
     </ul>
@@ -237,10 +248,24 @@
 <section id="publications">
   <h2>Publications &amp; <span>output</span></h2>
   <div class="pub-stats">
+<!--AUTO:METRICAS-->
     <div class="stat-card">
-      <div class="num">58</div>
-      <div class="lbl">Scientific papers</div>
+      <div class="num">60</div>
+      <div class="lbl">Published papers</div>
     </div>
+    <div class="stat-card">
+      <div class="num">961</div>
+      <div class="lbl">Citations</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">18</div>
+      <div class="lbl">h-index</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">34</div>
+      <div class="lbl">i10-index</div>
+    </div>
+<!--/AUTO:METRICAS-->
     <div class="stat-card">
       <div class="num">2019</div>
       <div class="lbl">Stimulus Prize – ANCEFN</div>
@@ -250,38 +275,379 @@
       <div class="lbl">YouTube views (Canal Encuentro)</div>
     </div>
   </div>
+<!--AUTO:NOTA_METRICAS-->
+  <p class="metrics-note">Citation metrics from <a href="https://scholar.google.com/citations?user=QEZqKeEAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> as of 13 Nov 2026. Since 2021: 374 citations, h-index 10. Plus 2 submitted manuscripts.</p>
+<!--/AUTO:NOTA_METRICAS-->
 
-  <p style="color:#444; margin-bottom:1rem; font-family:sans-serif; font-size:.9rem;">Recent and selected publications:</p>
+<!--AUTO:PUBLICACIONES-->
+  <h3 class="pub-subhead">Recent</h3>
   <div class="pub-list">
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">58.</span> Boltzmann-Loschmidt dispute reloaded quantum 150 years later <span class="pub-status">submitted</span></span>
-      <span class="pub-journal">L. Ermann, A.D. Chepelianskii, D.L. Shepelyansky · Physical Review Letters</span>
+      <span class="pub-title"><span class="pub-num">62.</span> <a href="https://arxiv.org/abs/2610.23573" target="_blank" rel="noopener">Fractal Period Locking and Action-Quantized Resonances in the Open Quantum Baker Map</a> <span class="pub-status">submitted</span></span>
+      <span class="pub-journal"><b>L. Ermann</b> · Submitted to Phys. Rev. E · arXiv:2610.23573</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">56.</span> Dynamical thermalization, Rayleigh–Jeans condensate, vortexes and wave collapse in quantum chaos fibers and fluid of light</span>
-      <span class="pub-journal">L. Ermann, A.D. Chepelianskii, D.L. Shepelyansky · J. Phys. A: Math. Theor. 59 055702 (2026)</span>
+      <span class="pub-title"><span class="pub-num">61.</span> <a href="https://doi.org/10.21203/rs.3.rs-9905023/v1" target="_blank" rel="noopener">Socioeconomic mixing in urban parks: A complex systems perspective on three Argentine cities</a> <span class="pub-status">submitted</span></span>
+      <span class="pub-journal">A. Salgado, <b>L. Ermann</b>, I. Caridi · Submitted to Discover Cities</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">55.</span> Opinion Formation in Wikipedia Ising Networks</span>
-      <span class="pub-journal">L. Ermann, K.M. Frahm, D.L. Shepelyansky · Information 16(9), 782 (2025)</span>
+      <span class="pub-title"><span class="pub-num">60.</span> <a href="https://doi.org/10.1103/q5fx-y7zr" target="_blank" rel="noopener">Complex spacing ratio statistics in the partially open asymmetric quantum baker map</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, P. Sesin, A.M.F. Rivas, P.D. Bergamasco, G.G. Carlo · Phys. Rev. E 114, 054203 (2026)</span>
+      <span class="pub-cites">Cited by 1</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">54.</span> Ideal Gas Law for a Quantum Particle</span>
-      <span class="pub-journal">A.M.F. Rivas, E. Vergini, L. Ermann, G.G. Carlo · Phys. Rev. E 112, 014223 (2025)</span>
+      <span class="pub-title"><span class="pub-num">59.</span> <a href="https://doi.org/10.3390/complexities2030020" target="_blank" rel="noopener">Thermodynamic description of wealth inequality in the world</a></span>
+      <span class="pub-journal">K.M. Frahm, <b>L. Ermann</b>, D. L. Shepelyansky · Complexities 2, 20 (2026)</span>
+      <span class="pub-cites">Cited by 5</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">35.</span> Kolmogorov turbulence defeated by Anderson localization for a Bose-Einstein condensate in a Sinai-oscillator trap</span>
-      <span class="pub-journal">L. Ermann, E. Vergini, D.L. Shepelyansky · Phys. Rev. Lett. 119, 054103 (2017)</span>
+      <span class="pub-title"><span class="pub-num">58.</span> <a href="https://doi.org/10.1007/s44327-026-00321-0" target="_blank" rel="noopener">Structural and functional robustness in public transportation networks of Latin American cities</a></span>
+      <span class="pub-journal">T. Cicchini, O.D. Langle-Chimal, M.C. Gonzalez, I. Caridi, <b>L. Ermann</b> · Discover Cities 3, 139 (2026)</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">29.</span> Google matrix analysis of directed networks</span>
-      <span class="pub-journal">L. Ermann, K.M. Frahm, D.L. Shepelyansky · Rev. Mod. Phys. 87, 1261 (2015)</span>
+      <span class="pub-title"><span class="pub-num">57.</span> <a href="https://doi.org/10.3390/e28060594" target="_blank" rel="noopener">Boltzmann-Loschmidt dispute reloaded quantum 150 years later</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, A.D. Chepelianskii, D. L. Shepelyansky · Entropy 28(6), 594 (2026)</span>
+      <span class="pub-cites">Cited by 2</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">7.</span> Localization of resonance eigenfunction on quantum repellers</span>
-      <span class="pub-journal">L. Ermann, G.G. Carlo, M. Saraceno · Phys. Rev. Lett. 103, 054102 (2009)</span>
+      <span class="pub-title"><span class="pub-num">56.</span> <a href="https://doi.org/10.1088/1751-8121/ae3ebe" target="_blank" rel="noopener">Dynamical thermalization, Rayleigh-Jeans condensate, vortexes and wave collapse in quantum chaos fibers and fluid of light</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, A.D. Chepelianskii, D. L. Shepelyansky · J. Phys. A: Math. Theor. 59, 055702 (2026)</span>
+      <span class="pub-cites">Cited by 10</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">55.</span> <a href="https://doi.org/10.3390/info16090782" target="_blank" rel="noopener">Opinion Formation in Wikipedia Ising Networks</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, K.M. Frahm, D. L. Shepelyansky · Information 16(9), 782 (2025)</span>
+      <span class="pub-cites">Cited by 2</span>
     </div>
   </div>
+  <h3 class="pub-subhead">Selected</h3>
+  <div class="pub-list">
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">35.</span> <a href="https://doi.org/10.1103/physrevlett.119.054103" target="_blank" rel="noopener">Kolmogorov turbulence defeated by Anderson localization for a Bose-Einstein condensate in a Sinai-oscillator trap</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, E. Vergini, D.L. Shepelyansky · Phys. Rev. Lett. 119, 054103 (2017)</span>
+      <span class="pub-cites">Cited by 3</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">29.</span> <a href="https://doi.org/10.1103/revmodphys.87.1261" target="_blank" rel="noopener">Google matrix analysis of directed networks</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, K.M. Frahm, D.L. Shepelyansky · Rev. Mod. Phys. 87, 1261 (2015)</span>
+      <span class="pub-cites">Cited by 134</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">7.</span> <a href="https://doi.org/10.1103/physrevlett.103.054102" target="_blank" rel="noopener">Localization of resonance eigenfunction on quantum repellers</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, G.G. Carlo, M. Saraceno · Phys. Rev. Lett. 103, 054102 (2009)</span>
+      <span class="pub-cites">Cited by 54</span>
+    </div>
+  </div>
+  <details class="pub-all">
+  <summary>Full list of publications (62)</summary>
+  <div class="pub-list">
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">62.</span> <a href="https://arxiv.org/abs/2610.23573" target="_blank" rel="noopener">Fractal Period Locking and Action-Quantized Resonances in the Open Quantum Baker Map</a> <span class="pub-status">submitted</span></span>
+      <span class="pub-journal"><b>L. Ermann</b> · Submitted to Phys. Rev. E · arXiv:2610.23573</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">61.</span> <a href="https://doi.org/10.21203/rs.3.rs-9905023/v1" target="_blank" rel="noopener">Socioeconomic mixing in urban parks: A complex systems perspective on three Argentine cities</a> <span class="pub-status">submitted</span></span>
+      <span class="pub-journal">A. Salgado, <b>L. Ermann</b>, I. Caridi · Submitted to Discover Cities</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">60.</span> <a href="https://doi.org/10.1103/q5fx-y7zr" target="_blank" rel="noopener">Complex spacing ratio statistics in the partially open asymmetric quantum baker map</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, P. Sesin, A.M.F. Rivas, P.D. Bergamasco, G.G. Carlo · Phys. Rev. E 114, 054203 (2026)</span>
+      <span class="pub-cites">Cited by 1</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">59.</span> <a href="https://doi.org/10.3390/complexities2030020" target="_blank" rel="noopener">Thermodynamic description of wealth inequality in the world</a></span>
+      <span class="pub-journal">K.M. Frahm, <b>L. Ermann</b>, D. L. Shepelyansky · Complexities 2, 20 (2026)</span>
+      <span class="pub-cites">Cited by 5</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">58.</span> <a href="https://doi.org/10.1007/s44327-026-00321-0" target="_blank" rel="noopener">Structural and functional robustness in public transportation networks of Latin American cities</a></span>
+      <span class="pub-journal">T. Cicchini, O.D. Langle-Chimal, M.C. Gonzalez, I. Caridi, <b>L. Ermann</b> · Discover Cities 3, 139 (2026)</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">57.</span> <a href="https://doi.org/10.3390/e28060594" target="_blank" rel="noopener">Boltzmann-Loschmidt dispute reloaded quantum 150 years later</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, A.D. Chepelianskii, D. L. Shepelyansky · Entropy 28(6), 594 (2026)</span>
+      <span class="pub-cites">Cited by 2</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">56.</span> <a href="https://doi.org/10.1088/1751-8121/ae3ebe" target="_blank" rel="noopener">Dynamical thermalization, Rayleigh-Jeans condensate, vortexes and wave collapse in quantum chaos fibers and fluid of light</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, A.D. Chepelianskii, D. L. Shepelyansky · J. Phys. A: Math. Theor. 59, 055702 (2026)</span>
+      <span class="pub-cites">Cited by 10</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">55.</span> <a href="https://doi.org/10.3390/info16090782" target="_blank" rel="noopener">Opinion Formation in Wikipedia Ising Networks</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, K.M. Frahm, D. L. Shepelyansky · Information 16(9), 782 (2025)</span>
+      <span class="pub-cites">Cited by 2</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">54.</span> <a href="https://doi.org/10.1103/nwwy-qwwp" target="_blank" rel="noopener">Ideal Gas Law for a Quantum Particle</a></span>
+      <span class="pub-journal">A.M.F. Rivas, E. Vergini, <b>L. Ermann</b>, G.G. Carlo · Phys. Rev. E 112, 014223 (2025)</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">53.</span> <a href="https://doi.org/10.1016/j.physa.2024.130310" target="_blank" rel="noopener">Exploring quantum localization with machine learning</a></span>
+      <span class="pub-journal">J. Montes, <b>L. Ermann</b>, A.M.F. Rivas, F. Borondo, G.G. Carlo · Physica A 659, 130310 (2025)</span>
+      <span class="pub-cites">Cited by 5</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">52.</span> <a href="https://doi.org/10.3390/info15090571" target="_blank" rel="noopener">Confrontation of Capitalism and Socialism in Wikipedia Networks</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D. L. Shepelyansky · Information 15(9), 571 (2024)</span>
+      <span class="pub-cites">Cited by 5</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">51.</span> <a href="https://doi.org/10.1016/j.chaos.2024.115019" target="_blank" rel="noopener">Robustness of the public transport network against attacks on its routes</a></span>
+      <span class="pub-journal">T. Cicchini, I. Caridi, <b>L. Ermann</b> · Chaos Solitons Fractals 184, 115019 (2024)</span>
+      <span class="pub-cites">Cited by 18</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">50.</span> <a href="https://doi.org/10.1103/physreva.107.043324" target="_blank" rel="noopener">Ground state of composite bosons in low-dimensional graphs</a></span>
+      <span class="pub-journal">C. Cormick, <b>L. Ermann</b> · Phys. Rev. A 107, 043324 (2023)</span>
+      <span class="pub-cites">Cited by 2</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">49.</span> <a href="https://doi.org/10.1103/physreva.107.033712" target="_blank" rel="noopener">Fokker-Planck treatment of nonlinearities in the dispersive coupling of an ion and an optical cavity</a></span>
+      <span class="pub-journal">A. Kahan, <b>L. Ermann</b>, M. Saraceno, C. Cormick · Phys. Rev. A 107, 033712 (2023)</span>
+      <span class="pub-cites">Cited by 2</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">48.</span> <a href="https://doi.org/10.1088/1751-8121/ac6af9" target="_blank" rel="noopener">Loschmidt echo and Poincare recurrences of entanglement</a></span>
+      <span class="pub-journal">K. Frahm, <b>L. Ermann</b>, D. L. Shepelyansky · J. Phys. A: Math. Theor. 55, 234004 (2022)</span>
+      <span class="pub-cites">Cited by 1</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">47.</span> <a href="https://doi.org/10.3390/e24030327" target="_blank" rel="noopener">COVID-19&#x27;s Impact on International Trade</a></span>
+      <span class="pub-journal">C. Coquide, J. Lages, <b>L. Ermann</b>, D. L. Shepelyansky · Entropy 24, 327 (2022)</span>
+      <span class="pub-cites">Cited by 25</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">46.</span> <a href="https://doi.org/10.1103/physreva.104.043705" target="_blank" rel="noopener">A trapped ion in an optical cavity: numerical study of an optomechanical transition in the few-photon regime</a></span>
+      <span class="pub-journal">A. Kahan, <b>L. Ermann</b>, C. Cormick · Phys. Rev. A 104, 043705 (2021)</span>
+      <span class="pub-cites">Cited by 6</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">45.</span> <a href="https://doi.org/10.1063/5.0057969" target="_blank" rel="noopener">Deconfinement of classical Yang-Mills color fields in a disorder potential</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D. L. Shepelyansky · Chaos 31, 093106 (2021)</span>
+      <span class="pub-cites">Cited by 6</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">44.</span> <a href="https://doi.org/10.1007/s41109-021-00380-9" target="_blank" rel="noopener">World impact of kernel European Union 9 countries from Google matrix analysis of the world trade network</a></span>
+      <span class="pub-journal">J. Loye, <b>L. Ermann</b>, D. L. Shepelyansky · Appl. Netw. Sci. 6, 37 (2021)</span>
+      <span class="pub-cites">Cited by 11</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">43.</span> <a href="https://doi.org/10.1103/physreva.102.033729" target="_blank" rel="noopener">Jaynes-Cummings model under monochromatic driving</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, Gabriel G. Carlo, A. D. Chepelianskii, D. L. Shepelyansky · Phys. Rev. A 102, 033729 (2020)</span>
+      <span class="pub-cites">Cited by 18</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">42.</span> <a href="https://doi.org/10.3390/condmat4030076" target="_blank" rel="noopener">Dynamical thermalization of interacting fermionic atoms in a Sinai-oscillator trap</a></span>
+      <span class="pub-journal">K. Frahm, <b>L. Ermann</b>, D.L. Shepelyansky · Condens. Matter 4, 76 (2019)</span>
+      <span class="pub-cites">Cited by 4</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">41.</span> <a href="https://doi.org/10.1140/epjb/e2019-100132-6" target="_blank" rel="noopener">Influence of petroleum and gas trade on EU economies from the reduced Google matrix analysis of UN COMTRADE data</a></span>
+      <span class="pub-journal">C. Coquide, <b>L. Ermann</b>, J. Lages, D.L. Shepelyansky · Eur. Phys. J. B 92, 171 (2019)</span>
+      <span class="pub-cites">Cited by 25</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">40.</span> <a href="https://doi.org/10.1103/physreve.99.042214" target="_blank" rel="noopener">Chaos simplifies quantum friction</a></span>
+      <span class="pub-journal">G.G. Carlo, <b>L. Ermann</b>, A.M.F. Rivas · Phys. Rev. E 99, 042214 (2019)</span>
+      <span class="pub-cites">Cited by 6</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">39.</span> <a href="https://doi.org/10.1103/physreve.99.012215" target="_blank" rel="noopener">Incommensurate standard map</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · Phys. Rev. E 99, 012215 (2019)</span>
+      <span class="pub-cites">Cited by 4</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">38.</span> <a href="https://doi.org/10.1103/physreve.99.012214" target="_blank" rel="noopener">3D classical and quantum stable structures of dissipative systems</a></span>
+      <span class="pub-journal">G.G. Carlo, <b>L. Ermann</b>, A.M.F. Rivas, M.E. Spina · Phys. Rev. E 99, 012214 (2019)</span>
+      <span class="pub-cites">Cited by 6</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">37.</span> <a href="https://doi.org/10.1140/epjb/e2018-80674-y" target="_blank" rel="noopener">Google matrix of Bitcoin network</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, K.M. Frahm, D.L. Shepelyansky · Eur. Phys. J. B 91, 127 (2018)</span>
+      <span class="pub-cites">Cited by 17</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">36.</span> <a href="https://doi.org/10.1103/physreve.96.032202" target="_blank" rel="noopener">Signatures of classical structures in the leading eigenstates of quantum dissipative systems</a></span>
+      <span class="pub-journal">G.G. Carlo, <b>L. Ermann</b>, A.M.F. Rivas · Phys. Rev. E 96, 032202 (2017)</span>
+      <span class="pub-cites">Cited by 4</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">35.</span> <a href="https://doi.org/10.1103/physrevlett.119.054103" target="_blank" rel="noopener">Kolmogorov turbulence defeated by Anderson localization for a Bose-Einstein condensate in a Sinai-oscillator trap</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, E. Vergini, D.L. Shepelyansky · Phys. Rev. Lett. 119, 054103 (2017)</span>
+      <span class="pub-cites">Cited by 3</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">34.</span> <a href="https://doi.org/10.1103/physreve.95.062202" target="_blank" rel="noopener">Classical counterparts of quantum attractors in generic dissipative systems</a></span>
+      <span class="pub-journal">G.G. Carlo, <b>L. Ermann</b>, A.M.F. Rivas, M.E. Spina, D. Poletti · Phys. Rev. E 95, 062202 (2017)</span>
+      <span class="pub-cites">Cited by 11</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">33.</span> <a href="https://doi.org/10.1103/physreva.95.032102" target="_blank" rel="noopener">Phase-space representations of symmetric informationally complete positive-operator-valued-measure fiducial states</a></span>
+      <span class="pub-journal">M. Saraceno, <b>L. Ermann</b>, M.C. Cormick · Phys. Rev. A 95, 032102 (2017)</span>
+      <span class="pub-cites">Cited by 7</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">32.</span> <a href="https://doi.org/10.4249/scholarpedia.30944" target="_blank" rel="noopener">Google matrix</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, K.M. Frahm, D.L. Shepelyansky · Scholarpedia 11(11), 30944 (2016)</span>
+      <span class="pub-cites">Cited by 2</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">31.</span> <a href="https://doi.org/10.1103/physreva.94.013618" target="_blank" rel="noopener">Dynamics and thermalization of Bose-Einstein condensate in Sinai oscillator trap</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, E. Vergini, D.L. Shepelyansky · Phys. Rev. A 94, 013618 (2016)</span>
+      <span class="pub-cites">Cited by 13</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">30.</span> <a href="https://doi.org/10.1103/physreve.93.042133" target="_blank" rel="noopener">Correspondence behavior of classical and quantum dissipative directed transport via thermal noise</a></span>
+      <span class="pub-journal">G.G. Carlo, <b>L. Ermann</b>, A.M.F. Rivas, M.E. Spina · Phys. Rev. E 93, 042133 (2016)</span>
+      <span class="pub-cites">Cited by 12</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">29.</span> <a href="https://doi.org/10.1103/revmodphys.87.1261" target="_blank" rel="noopener">Google matrix analysis of directed networks</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, K.M. Frahm, D.L. Shepelyansky · Rev. Mod. Phys. 87, 1261 (2015)</span>
+      <span class="pub-cites">Cited by 134</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">28.</span> <a href="https://doi.org/10.1209/0295-5075/111/50009" target="_blank" rel="noopener">Dynamical thermalization of Bose-Einstein condensate in Bunimovich stadium</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, E. Vergini, D.L. Shepelyansky · EPL 111, 50009 (2015)</span>
+      <span class="pub-cites">Cited by 12</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">27.</span> <a href="https://doi.org/10.1140/epjb/e2015-60357-1" target="_blank" rel="noopener">Statistical analysis of NOMAO customer votes for spots of France</a></span>
+      <span class="pub-journal">R. Palovics, B. Daroczy, A. Benczur, J. Pap, <b>L. Ermann</b>, S. Phan, A.D. Chepelianskii, D.L. Shepelyansky · Eur. Phys. J. B 88, 194 (2015)</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">26.</span> <a href="https://doi.org/10.1140/epjb/e2015-60047-0" target="_blank" rel="noopener">Google matrix analysis of the multiproduct world trade network</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · Eur. Phys. J. B 88, 84 (2015)</span>
+      <span class="pub-cites">Cited by 35</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">25.</span> <a href="https://doi.org/10.1103/physreve.91.010903" target="_blank" rel="noopener">Quantum Parameter Space of Dissipative Directed Transport</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, G.G. Carlo · Phys. Rev. E (Rapid Comm.) 91, 010903(R) (2015)</span>
+      <span class="pub-cites">Cited by 16</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">24.</span> <a href="https://doi.org/10.1088/1751-8113/48/3/035102" target="_blank" rel="noopener">Symbolic walk in regular networks</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, G.G. Carlo · J. Phys. A: Math. Theor. 48, 035102 (2014)</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">23.</span> <a href="https://doi.org/10.1088/1751-8113/47/33/335101" target="_blank" rel="noopener">Destruction of Anderson localization by nonlinearity in kicked rotator at different effective dimensions</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · J. Phys. A: Math. Theor. 47, 335101 (2014)</span>
+      <span class="pub-cites">Cited by 30</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">22.</span> <a href="https://doi.org/10.4249/scholarpedia.9860" target="_blank" rel="noopener">The Quantum Baker Map</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, M. Saraceno · Scholarpedia 7(12), 9860 (2012)</span>
+      <span class="pub-cites">Cited by 2</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">21.</span> <a href="https://doi.org/10.1088/1367-2630/15/12/123004" target="_blank" rel="noopener">Quantum Gibbs distribution from dynamical thermalization in classical nonlinear lattices</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · New J. Phys. 15, 123004 (2013)</span>
+      <span class="pub-cites">Cited by 16</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">20.</span> <a href="https://doi.org/10.1140/epjb/e2013-31090-8" target="_blank" rel="noopener">Spectral properties of Google matrix of Wikipedia and other networks</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, K.M. Frahm, D.L. Shepelyansky · Eur. Phys. J. B 86, 193 (2013)</span>
+      <span class="pub-cites">Cited by 37</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">19.</span> <a href="https://doi.org/10.1103/physreve.87.022912" target="_blank" rel="noopener">Symmetry breaking for ratchet transport in presence of interactions and magnetic field</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, A.D. Chepelianskii, D.L. Shepelyansky · Phys. Rev. E 87, 022912 (2013)</span>
+      <span class="pub-cites">Cited by 4</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">18.</span> <a href="https://doi.org/10.1103/physreve.87.012909" target="_blank" rel="noopener">Classical transients and the support of open quantum maps</a></span>
+      <span class="pub-journal">G.G. Carlo, D.A. Wisniacki, <b>L. Ermann</b>, R.M. Benito, F. Borondo · Phys. Rev. E 87, 012909 (2013)</span>
+      <span class="pub-cites">Cited by 11</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">17.</span> <a href="https://doi.org/10.1016/j.physleta.2012.10.056" target="_blank" rel="noopener">Ecological analysis of the world trade</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · Phys. Lett. A 377, 250 (2013)</span>
+      <span class="pub-cites">Cited by 29</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">16.</span> <a href="https://doi.org/10.1088/1751-8113/45/27/275101" target="_blank" rel="noopener">Towards two-dimensional search engines</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, A.D. Chepelianskii, D.L. Shepelyansky · J. Phys. A: Math. Theor. 45, 275101 (2012)</span>
+      <span class="pub-cites">Cited by 25</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">15.</span> <a href="https://doi.org/10.1103/physreve.85.066204" target="_blank" rel="noopener">Transient features of Quantum Open Maps</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, G.G. Carlo, J.M. Pedrosa, M. Saraceno · Phys. Rev. E 85, 066204 (2012)</span>
+      <span class="pub-cites">Cited by 14</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">14.</span> <a href="https://doi.org/10.1016/j.physd.2011.11.012" target="_blank" rel="noopener">Arnold cat map, Ulam method and time reversal</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · Physica D 241, 514 (2012)</span>
+      <span class="pub-cites">Cited by 17</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">13.</span> <a href="https://doi.org/10.12693/aphyspola.120.a-158" target="_blank" rel="noopener">Google matrix of the world trade network</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · Acta Phys. Pol. A 120, A-158 (2011)</span>
+      <span class="pub-cites">Cited by 46</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">12.</span> <a href="https://doi.org/10.1140/epjb/e2010-10893-1" target="_blank" rel="noopener">Relativistic graphene ratchet on semidisk Galton board</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · Eur. Phys. J. B 79, 357 (2011)</span>
+      <span class="pub-cites">Cited by 20</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">11.</span> <a href="https://doi.org/10.1103/physreve.83.011103" target="_blank" rel="noopener">On the environmental stability of quantum chaotic ratchets</a></span>
+      <span class="pub-journal">G.G. Carlo, <b>L. Ermann</b>, F. Borondo, R.M. Benito · Phys. Rev. E 83, 011103 (2011)</span>
+      <span class="pub-cites">Cited by 10</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">10.</span> <a href="https://doi.org/10.1140/epjb/e2010-10774-7" target="_blank" rel="noopener">Fractal Weyl law for Linux Kernel Architecture</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, A.D. Chepelianskii, D.L. Shepelyansky · Eur. Phys. J. B 79, 115 (2011)</span>
+      <span class="pub-cites">Cited by 17</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">9.</span> <a href="https://doi.org/10.1140/epjb/e2010-00144-0" target="_blank" rel="noopener">Ulam method and fractal Weyl law for Perron-Frobenius operators</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · Eur. Phys. J. B 75, 299 (2010)</span>
+      <span class="pub-cites">Cited by 46</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">8.</span> <a href="https://doi.org/10.1103/physreve.81.036221" target="_blank" rel="noopener">Google matrix and Ulam networks of intermittency maps</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · Phys. Rev. E 81, 036221 (2010)</span>
+      <span class="pub-cites">Cited by 19</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">7.</span> <a href="https://doi.org/10.1103/physrevlett.103.054102" target="_blank" rel="noopener">Localization of resonance eigenfunction on quantum repellers</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, G.G. Carlo, M. Saraceno · Phys. Rev. Lett. 103, 054102 (2009)</span>
+      <span class="pub-cites">Cited by 54</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">6.</span> <a href="https://doi.org/10.1103/physreve.79.016215" target="_blank" rel="noopener">Distribution of resonances in the quantum open baker map</a></span>
+      <span class="pub-journal">J.M. Pedrosa, G.G. Carlo, D. Wisniacki, <b>L. Ermann</b> · Phys. Rev. E 79, 016215 (2009)</span>
+      <span class="pub-cites">Cited by 23</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">5.</span> <a href="https://doi.org/10.1103/physreve.79.056201" target="_blank" rel="noopener">Behavior of the current in the asymmetric quantum multibaker map</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, G.G. Carlo, M. Saraceno · Phys. Rev. E 79, 056201 (2009)</span>
+      <span class="pub-cites">Cited by 5</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">4.</span> <a href="https://doi.org/10.1103/physreve.78.036221" target="_blank" rel="noopener">A periodic orbit basis for the quantum baker map</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, M. Saraceno · Phys. Rev. E 78, 036221 (2008)</span>
+      <span class="pub-cites">Cited by 24</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">3.</span> <a href="https://doi.org/10.1103/physreve.77.011126" target="_blank" rel="noopener">Transport phenomena in the asymmetric quantum multibaker map</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, G.G. Carlo, M. Saraceno · Phys. Rev. E 77, 011126 (2008)</span>
+      <span class="pub-cites">Cited by 10</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">2.</span> <a href="https://doi.org/10.1103/physreve.74.046205" target="_blank" rel="noopener">Generalized Quantum Baker Maps as perturbations of a simple kernel</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, M. Saraceno · Phys. Rev. E 74, 046205 (2006)</span>
+      <span class="pub-cites">Cited by 18</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">1.</span> <a href="https://doi.org/10.1103/physreva.73.012302" target="_blank" rel="noopener">Decoherence induced by a chaotic environment: A quantum walker with a complex coin</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, J.P. Paz, M. Saraceno · Phys. Rev. A 73, 012302 (2006)</span>
+      <span class="pub-cites">Cited by 53</span>
+    </div>
+  </div>
+  </details>
+<!--/AUTO:PUBLICACIONES-->
 
   <div class="pub-links">
     <a href="https://scholar.google.com/citations?user=QEZqKeEAAAAJ&hl=en" class="btn btn-primary" target="_blank">Google Scholar</a>
@@ -387,7 +753,7 @@
 </section>
 
 <footer>
-  © 2026 Leonardo Ermann · Buenos Aires, Argentina
+  © 2026 Leonardo Ermann · Buenos Aires, Argentina<!--AUTO:FECHA--> · Last updated 13 Nov 2026<!--/AUTO:FECHA-->
 </footer>
 
 </body>
