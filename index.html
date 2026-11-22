@@ -116,6 +116,28 @@
     .pub-stats { grid-template-columns: 1fr 1fr; }
     nav ul { gap: .8rem; }
   }
+
+  /* Carrusel de figuras (#figures) */
+  .car { position: relative; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .car-stage { position: relative; aspect-ratio: 16 / 10; }
+  .car-slide { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 1.2rem 3.2rem;
+    opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility .6s; cursor: pointer; }
+  .car-slide.on { opacity: 1; visibility: visible; z-index: 1; }
+  .car-slide img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .car-btn { position: absolute; top: calc(50% - 30px); z-index: 3; width: 40px; height: 40px; border-radius: 50%; border: none;
+    background: rgba(26,26,26,.55); color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; opacity: .7; transition: opacity .2s; }
+  .car-btn:hover, .car-btn:focus-visible { opacity: 1; }
+  .car-btn:focus-visible, .car-slide:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .car-prev { left: 10px; } .car-next { right: 10px; }
+  .car-cap { display: flex; gap: .4rem 1rem; align-items: baseline; justify-content: space-between; flex-wrap: wrap;
+    padding: .75rem 1.1rem; border-top: 1px solid var(--border); background: var(--surface); }
+  .car-cap a { color: var(--text); text-decoration: none; min-width: 0; flex: 1 1 18rem; font-size: .98rem; line-height: 1.4; }
+  .car-cap a:hover { color: var(--accent); }
+  .car-meta { font-family: sans-serif; font-size: .78rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .car-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--accent); z-index: 2; }
+  .car-hint { font-family: sans-serif; font-size: .8rem; color: var(--muted); margin-top: .6rem; }
+  @media (max-width: 640px) { .car-stage { aspect-ratio: 4 / 3; } .car-slide { padding: .8rem 2.6rem; } .car-btn { width: 34px; height: 34px; } }
+  @media (prefers-reduced-motion: reduce) { .car-slide { transition: none; } }
 </style>
 </head>
 <body>
@@ -125,6 +147,7 @@
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#research">Research</a></li>
+    <li><a href="#figures">Figures</a></li>
     <li><a href="#positions">Positions</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#grants">Grants</a></li>
@@ -186,6 +209,708 @@
     <span class="chip">Google Matrix Analysis</span>
     <span class="chip">Bose-Einstein Condensates</span>
   </div>
+</section>
+
+<section id="figures">
+  <h2>Research <span>in pictures</span></h2>
+  <div class="car" id="car" aria-roledescription="carousel" aria-label="Figures from my publications">
+    <div class="car-stage" id="car-stage"></div>
+    <button class="car-btn car-prev" id="car-prev" type="button" aria-label="Previous figure">&#8249;</button>
+    <button class="car-btn car-next" id="car-next" type="button" aria-label="Next figure">&#8250;</button>
+    <div class="car-cap"><a id="car-title" href="#" target="_blank" rel="noopener"></a><span class="car-meta" id="car-meta"></span></div>
+    <div class="car-bar" id="car-bar"></div>
+  </div>
+  <p class="car-hint">Click a figure to open the paper.</p>
+<!--AUTO:CARRUSEL-->
+<script id="fig-data" type="application/json">
+[
+{
+"n": 1,
+"img": "figs/fig01.jpg",
+"fig": 1,
+"title": "Decoherence induced by a chaotic environment: A quantum walker with a complex coin",
+"url": "https://doi.org/10.1103/physreva.73.012302",
+"venue": "Phys. Rev. A (2006)"
+},
+{
+"n": 2,
+"img": "figs/fig02.jpg",
+"fig": 14,
+"title": "Generalized Quantum Baker Maps as perturbations of a simple kernel",
+"url": "https://doi.org/10.1103/physreve.74.046205",
+"venue": "Phys. Rev. E (2006)"
+},
+{
+"n": 3,
+"img": "figs/fig03.jpg",
+"fig": 1,
+"title": "Transport phenomena in the asymmetric quantum multibaker map",
+"url": "https://doi.org/10.1103/physreve.77.011126",
+"venue": "Phys. Rev. E (2008)"
+},
+{
+"n": 4,
+"img": "figs/fig04.jpg",
+"fig": 1,
+"title": "A periodic orbit basis for the quantum baker map",
+"url": "https://doi.org/10.1103/physreve.78.036221",
+"venue": "Phys. Rev. E (2008)"
+},
+{
+"n": 5,
+"img": "figs/fig05.jpg",
+"fig": 2,
+"title": "Distribution of resonances in the quantum open baker map",
+"url": "https://doi.org/10.1103/physreve.79.016215",
+"venue": "Phys. Rev. E (2009)"
+},
+{
+"n": 6,
+"img": "figs/fig06.jpg",
+"fig": 1,
+"title": "Behavior of the current in the asymmetric quantum multibaker map",
+"url": "https://doi.org/10.1103/physreve.79.056201",
+"venue": "Phys. Rev. E (2009)"
+},
+{
+"n": 7,
+"img": "figs/fig07.jpg",
+"fig": 2,
+"title": "Localization of resonance eigenfunction on quantum repellers",
+"url": "https://doi.org/10.1103/physrevlett.103.054102",
+"venue": "Phys. Rev. Lett. (2009)"
+},
+{
+"n": 8,
+"img": "figs/fig08.jpg",
+"fig": 4,
+"title": "Google matrix and Ulam networks of intermittency maps",
+"url": "https://doi.org/10.1103/physreve.81.036221",
+"venue": "Phys. Rev. E (2010)"
+},
+{
+"n": 8,
+"img": "figs/fig08b.jpg",
+"fig": 14,
+"title": "Google matrix and Ulam networks of intermittency maps",
+"url": "https://doi.org/10.1103/physreve.81.036221",
+"venue": "Phys. Rev. E (2010)"
+},
+{
+"n": 9,
+"img": "figs/fig09.jpg",
+"fig": 1,
+"title": "Ulam method and fractal Weyl law for Perron-Frobenius operators",
+"url": "https://doi.org/10.1140/epjb/e2010-00144-0",
+"venue": "Eur. Phys. J. B (2010)"
+},
+{
+"n": 10,
+"img": "figs/fig10.jpg",
+"fig": 7,
+"title": "Fractal Weyl law for Linux Kernel Architecture",
+"url": "https://doi.org/10.1140/epjb/e2010-10774-7",
+"venue": "Eur. Phys. J. B (2011)"
+},
+{
+"n": 11,
+"img": "figs/fig11.jpg",
+"fig": 5,
+"title": "On the environmental stability of quantum chaotic ratchets",
+"url": "https://doi.org/10.1103/physreve.83.011103",
+"venue": "Phys. Rev. E (2011)"
+},
+{
+"n": 12,
+"img": "figs/fig12.jpg",
+"fig": 7,
+"title": "Relativistic graphene ratchet on semidisk Galton board",
+"url": "https://doi.org/10.1140/epjb/e2010-10893-1",
+"venue": "Eur. Phys. J. B (2011)"
+},
+{
+"n": 12,
+"img": "figs/fig12b.jpg",
+"fig": 1,
+"title": "Relativistic graphene ratchet on semidisk Galton board",
+"url": "https://doi.org/10.1140/epjb/e2010-10893-1",
+"venue": "Eur. Phys. J. B (2011)"
+},
+{
+"n": 13,
+"img": "figs/fig13.jpg",
+"fig": 7,
+"title": "Google matrix of the world trade network",
+"url": "https://doi.org/10.12693/aphyspola.120.a-158",
+"venue": "Acta Phys. Pol. A (2011)"
+},
+{
+"n": 14,
+"img": "figs/fig14.jpg",
+"fig": 7,
+"title": "Arnold cat map, Ulam method and time reversal",
+"url": "https://doi.org/10.1016/j.physd.2011.11.012",
+"venue": "Physica D (2012)"
+},
+{
+"n": 14,
+"img": "figs/fig14b.jpg",
+"fig": 6,
+"title": "Arnold cat map, Ulam method and time reversal",
+"url": "https://doi.org/10.1016/j.physd.2011.11.012",
+"venue": "Physica D (2012)"
+},
+{
+"n": 15,
+"img": "figs/fig15.jpg",
+"fig": 6,
+"title": "Transient features of Quantum Open Maps",
+"url": "https://doi.org/10.1103/physreve.85.066204",
+"venue": "Phys. Rev. E (2012)"
+},
+{
+"n": 16,
+"img": "figs/fig16.jpg",
+"fig": 3,
+"title": "Towards two-dimensional search engines",
+"url": "https://doi.org/10.1088/1751-8113/45/27/275101",
+"venue": "J. Phys. A: Math. Theor. (2012)"
+},
+{
+"n": 17,
+"img": "figs/fig17.jpg",
+"fig": 4,
+"title": "The Quantum Baker Map",
+"url": "https://doi.org/10.4249/scholarpedia.9860",
+"venue": "Scholarpedia (2012)"
+},
+{
+"n": 17,
+"img": "figs/fig17b.jpg",
+"fig": 1,
+"title": "The Quantum Baker Map",
+"url": "https://doi.org/10.4249/scholarpedia.9860",
+"venue": "Scholarpedia (2012)"
+},
+{
+"n": 18,
+"img": "figs/fig18.jpg",
+"fig": 1,
+"title": "Ecological analysis of the world trade",
+"url": "https://doi.org/10.1016/j.physleta.2012.10.056",
+"venue": "Phys. Lett. A (2013)"
+},
+{
+"n": 18,
+"img": "figs/fig18b.jpg",
+"fig": 2,
+"title": "Ecological analysis of the world trade",
+"url": "https://doi.org/10.1016/j.physleta.2012.10.056",
+"venue": "Phys. Lett. A (2013)"
+},
+{
+"n": 19,
+"img": "figs/fig19.jpg",
+"fig": 11,
+"title": "Classical transients and the support of open quantum maps",
+"url": "https://doi.org/10.1103/physreve.87.012909",
+"venue": "Phys. Rev. E (2013)"
+},
+{
+"n": 19,
+"img": "figs/fig19b.jpg",
+"fig": 1,
+"title": "Classical transients and the support of open quantum maps",
+"url": "https://doi.org/10.1103/physreve.87.012909",
+"venue": "Phys. Rev. E (2013)"
+},
+{
+"n": 20,
+"img": "figs/fig20.jpg",
+"fig": 3,
+"title": "Symmetry breaking for ratchet transport in presence of interactions and magnetic field",
+"url": "https://doi.org/10.1103/physreve.87.022912",
+"venue": "Phys. Rev. E (2013)"
+},
+{
+"n": 21,
+"img": "figs/fig21.jpg",
+"fig": 8,
+"title": "Spectral properties of Google matrix of Wikipedia and other networks",
+"url": "https://doi.org/10.1140/epjb/e2013-31090-8",
+"venue": "Eur. Phys. J. B (2013)"
+},
+{
+"n": 22,
+"img": "figs/fig22.jpg",
+"fig": 12,
+"title": "Quantum Gibbs distribution from dynamical thermalization in classical nonlinear lattices",
+"url": "https://doi.org/10.1088/1367-2630/15/12/123004",
+"venue": "New J. Phys. (2013)"
+},
+{
+"n": 23,
+"img": "figs/fig23.jpg",
+"fig": 1,
+"title": "Destruction of Anderson localization by nonlinearity in kicked rotator at different effective dimensions",
+"url": "https://doi.org/10.1088/1751-8113/47/33/335101",
+"venue": "J. Phys. A: Math. Theor. (2014)"
+},
+{
+"n": 24,
+"img": "figs/fig24.jpg",
+"fig": 1,
+"title": "Symbolic walk in regular networks",
+"url": "https://doi.org/10.1088/1751-8113/48/3/035102",
+"venue": "J. Phys. A: Math. Theor. (2014)"
+},
+{
+"n": 25,
+"img": "figs/fig25.jpg",
+"fig": 1,
+"title": "Quantum Parameter Space of Dissipative Directed Transport",
+"url": "https://doi.org/10.1103/physreve.91.010903",
+"venue": "Phys. Rev. E (Rapid Comm.) (2015)"
+},
+{
+"n": 26,
+"img": "figs/fig26.jpg",
+"fig": 1,
+"title": "Google matrix analysis of the multiproduct world trade network",
+"url": "https://doi.org/10.1140/epjb/e2015-60047-0",
+"venue": "Eur. Phys. J. B (2015)"
+},
+{
+"n": 26,
+"img": "figs/fig26b.jpg",
+"fig": 20,
+"title": "Google matrix analysis of the multiproduct world trade network",
+"url": "https://doi.org/10.1140/epjb/e2015-60047-0",
+"venue": "Eur. Phys. J. B (2015)"
+},
+{
+"n": 27,
+"img": "figs/fig27.jpg",
+"fig": 1,
+"title": "Statistical analysis of NOMAO customer votes for spots of France",
+"url": "https://doi.org/10.1140/epjb/e2015-60357-1",
+"venue": "Eur. Phys. J. B (2015)"
+},
+{
+"n": 27,
+"img": "figs/fig27b.jpg",
+"fig": 7,
+"title": "Statistical analysis of NOMAO customer votes for spots of France",
+"url": "https://doi.org/10.1140/epjb/e2015-60357-1",
+"venue": "Eur. Phys. J. B (2015)"
+},
+{
+"n": 28,
+"img": "figs/fig28.jpg",
+"fig": 1,
+"title": "Dynamical thermalization of Bose-Einstein condensate in Bunimovich stadium",
+"url": "https://doi.org/10.1209/0295-5075/111/50009",
+"venue": "EPL (2015)"
+},
+{
+"n": 29,
+"img": "figs/fig29.jpg",
+"fig": 3,
+"title": "Google matrix analysis of directed networks",
+"url": "https://doi.org/10.1103/revmodphys.87.1261",
+"venue": "Rev. Mod. Phys. (2015)"
+},
+{
+"n": 29,
+"img": "figs/fig29b.jpg",
+"fig": 7,
+"title": "Google matrix analysis of directed networks",
+"url": "https://doi.org/10.1103/revmodphys.87.1261",
+"venue": "Rev. Mod. Phys. (2015)"
+},
+{
+"n": 30,
+"img": "figs/fig30.jpg",
+"fig": 3,
+"title": "Correspondence behavior of classical and quantum dissipative directed transport via thermal noise",
+"url": "https://doi.org/10.1103/physreve.93.042133",
+"venue": "Phys. Rev. E (2016)"
+},
+{
+"n": 31,
+"img": "figs/fig31.jpg",
+"fig": 5,
+"title": "Dynamics and thermalization of Bose-Einstein condensate in Sinai oscillator trap",
+"url": "https://doi.org/10.1103/physreva.94.013618",
+"venue": "Phys. Rev. A (2016)"
+},
+{
+"n": 31,
+"img": "figs/fig31b.jpg",
+"fig": 9,
+"title": "Dynamics and thermalization of Bose-Einstein condensate in Sinai oscillator trap",
+"url": "https://doi.org/10.1103/physreva.94.013618",
+"venue": "Phys. Rev. A (2016)"
+},
+{
+"n": 32,
+"img": "figs/fig32.jpg",
+"fig": 10,
+"title": "Google matrix",
+"url": "https://doi.org/10.4249/scholarpedia.30944",
+"venue": "Scholarpedia (2016)"
+},
+{
+"n": 33,
+"img": "figs/fig33.jpg",
+"fig": 2,
+"title": "Phase-space representations of symmetric informationally complete positive-operator-valued-measure fiducial states",
+"url": "https://doi.org/10.1103/physreva.95.032102",
+"venue": "Phys. Rev. A (2017)"
+},
+{
+"n": 34,
+"img": "figs/fig34.jpg",
+"fig": 3,
+"title": "Classical counterparts of quantum attractors in generic dissipative systems",
+"url": "https://doi.org/10.1103/physreve.95.062202",
+"venue": "Phys. Rev. E (2017)"
+},
+{
+"n": 35,
+"img": "figs/fig35.jpg",
+"fig": 5,
+"title": "Kolmogorov turbulence defeated by Anderson localization for a Bose-Einstein condensate in a Sinai-oscillator trap",
+"url": "https://doi.org/10.1103/physrevlett.119.054103",
+"venue": "Phys. Rev. Lett. (2017)"
+},
+{
+"n": 36,
+"img": "figs/fig36.jpg",
+"fig": 1,
+"title": "Signatures of classical structures in the leading eigenstates of quantum dissipative systems",
+"url": "https://doi.org/10.1103/physreve.96.032202",
+"venue": "Phys. Rev. E (2017)"
+},
+{
+"n": 37,
+"img": "figs/fig37.jpg",
+"fig": 11,
+"title": "Google matrix of Bitcoin network",
+"url": "https://doi.org/10.1140/epjb/e2018-80674-y",
+"venue": "Eur. Phys. J. B (2018)"
+},
+{
+"n": 38,
+"img": "figs/fig38.jpg",
+"fig": 1,
+"title": "3D classical and quantum stable structures of dissipative systems",
+"url": "https://doi.org/10.1103/physreve.99.012214",
+"venue": "Phys. Rev. E (2019)"
+},
+{
+"n": 38,
+"img": "figs/fig38b.jpg",
+"fig": 8,
+"title": "3D classical and quantum stable structures of dissipative systems",
+"url": "https://doi.org/10.1103/physreve.99.012214",
+"venue": "Phys. Rev. E (2019)"
+},
+{
+"n": 39,
+"img": "figs/fig39.jpg",
+"fig": 9,
+"title": "Incommensurate standard map",
+"url": "https://doi.org/10.1103/physreve.99.012215",
+"venue": "Phys. Rev. E (2019)"
+},
+{
+"n": 40,
+"img": "figs/fig40.jpg",
+"fig": 5,
+"title": "Chaos simplifies quantum friction",
+"url": "https://doi.org/10.1103/physreve.99.042214",
+"venue": "Phys. Rev. E (2019)"
+},
+{
+"n": 41,
+"img": "figs/fig41.jpg",
+"fig": 7,
+"title": "Influence of petroleum and gas trade on EU economies from the reduced Google matrix analysis of UN COMTRADE data",
+"url": "https://doi.org/10.1140/epjb/e2019-100132-6",
+"venue": "Eur. Phys. J. B (2019)"
+},
+{
+"n": 41,
+"img": "figs/fig41b.jpg",
+"fig": 3,
+"title": "Influence of petroleum and gas trade on EU economies from the reduced Google matrix analysis of UN COMTRADE data",
+"url": "https://doi.org/10.1140/epjb/e2019-100132-6",
+"venue": "Eur. Phys. J. B (2019)"
+},
+{
+"n": 42,
+"img": "figs/fig42.jpg",
+"fig": 15,
+"title": "Dynamical thermalization of interacting fermionic atoms in a Sinai-oscillator trap",
+"url": "https://doi.org/10.3390/condmat4030076",
+"venue": "Condens. Matter (2019)"
+},
+{
+"n": 43,
+"img": "figs/fig43.jpg",
+"fig": 10,
+"title": "Jaynes-Cummings model under monochromatic driving",
+"url": "https://doi.org/10.1103/physreva.102.033729",
+"venue": "Phys. Rev. A (2020)"
+},
+{
+"n": 44,
+"img": "figs/fig44.jpg",
+"fig": 4,
+"title": "World impact of kernel European Union 9 countries from Google matrix analysis of the world trade network",
+"url": "https://doi.org/10.1007/s41109-021-00380-9",
+"venue": "Appl. Netw. Sci. (2021)"
+},
+{
+"n": 45,
+"img": "figs/fig45.jpg",
+"fig": 7,
+"title": "Deconfinement of classical Yang-Mills color fields in a disorder potential",
+"url": "https://doi.org/10.1063/5.0057969",
+"venue": "Chaos (2021)"
+},
+{
+"n": 46,
+"img": "figs/fig46.jpg",
+"fig": 1,
+"title": "A trapped ion in an optical cavity: numerical study of an optomechanical transition in the few-photon regime",
+"url": "https://doi.org/10.1103/physreva.104.043705",
+"venue": "Phys. Rev. A (2021)"
+},
+{
+"n": 47,
+"img": "figs/fig47.jpg",
+"fig": 1,
+"title": "COVID-19's Impact on International Trade",
+"url": "https://doi.org/10.3390/e24030327",
+"venue": "Entropy (2022)"
+},
+{
+"n": 47,
+"img": "figs/fig47b.jpg",
+"fig": 4,
+"title": "COVID-19's Impact on International Trade",
+"url": "https://doi.org/10.3390/e24030327",
+"venue": "Entropy (2022)"
+},
+{
+"n": 48,
+"img": "figs/fig48.jpg",
+"fig": 17,
+"title": "Loschmidt echo and Poincare recurrences of entanglement",
+"url": "https://doi.org/10.1088/1751-8121/ac6af9",
+"venue": "J. Phys. A: Math. Theor. (2022)"
+},
+{
+"n": 49,
+"img": "figs/fig49.jpg",
+"fig": 7,
+"title": "Fokker-Planck treatment of nonlinearities in the dispersive coupling of an ion and an optical cavity",
+"url": "https://doi.org/10.1103/physreva.107.033712",
+"venue": "Phys. Rev. A (2023)"
+},
+{
+"n": 50,
+"img": "figs/fig50.jpg",
+"fig": 1,
+"title": "Ground state of composite bosons in low-dimensional graphs",
+"url": "https://doi.org/10.1103/physreva.107.043324",
+"venue": "Phys. Rev. A (2023)"
+},
+{
+"n": 51,
+"img": "figs/fig51.jpg",
+"fig": 2,
+"title": "Robustness of the public transport network against attacks on its routes",
+"url": "https://doi.org/10.1016/j.chaos.2024.115019",
+"venue": "Chaos Solitons Fractals (2024)"
+},
+{
+"n": 52,
+"img": "figs/fig52.jpg",
+"fig": 12,
+"title": "Confrontation of Capitalism and Socialism in Wikipedia Networks",
+"url": "https://doi.org/10.3390/info15090571",
+"venue": "Information (2024)"
+},
+{
+"n": 53,
+"img": "figs/fig53.jpg",
+"fig": 10,
+"title": "Exploring quantum localization with machine learning",
+"url": "https://doi.org/10.1016/j.physa.2024.130310",
+"venue": "Physica A (2025)"
+},
+{
+"n": 54,
+"img": "figs/fig54.jpg",
+"fig": 2,
+"title": "Ideal Gas Law for a Quantum Particle",
+"url": "https://doi.org/10.1103/nwwy-qwwp",
+"venue": "Phys. Rev. E (2025)"
+},
+{
+"n": 55,
+"img": "figs/fig55.jpg",
+"fig": 10,
+"title": "Opinion Formation in Wikipedia Ising Networks",
+"url": "https://doi.org/10.3390/info16090782",
+"venue": "Information (2025)"
+},
+{
+"n": 55,
+"img": "figs/fig55b.jpg",
+"fig": 3,
+"title": "Opinion Formation in Wikipedia Ising Networks",
+"url": "https://doi.org/10.3390/info16090782",
+"venue": "Information (2025)"
+},
+{
+"n": 56,
+"img": "figs/fig56.jpg",
+"fig": 3,
+"title": "Dynamical thermalization, Rayleigh-Jeans condensate, vortexes and wave collapse in quantum chaos fibers and fluid of light",
+"url": "https://doi.org/10.1088/1751-8121/ae3ebe",
+"venue": "J. Phys. A: Math. Theor. (2026)"
+},
+{
+"n": 56,
+"img": "figs/fig56b.jpg",
+"fig": 19,
+"title": "Dynamical thermalization, Rayleigh-Jeans condensate, vortexes and wave collapse in quantum chaos fibers and fluid of light",
+"url": "https://doi.org/10.1088/1751-8121/ae3ebe",
+"venue": "J. Phys. A: Math. Theor. (2026)"
+},
+{
+"n": 57,
+"img": "figs/fig57.jpg",
+"fig": 4,
+"title": "Boltzmann-Loschmidt dispute reloaded quantum 150 years later",
+"url": "https://doi.org/10.3390/e28060594",
+"venue": "Entropy (2026)"
+},
+{
+"n": 58,
+"img": "figs/fig58.jpg",
+"fig": 1,
+"title": "Structural and functional robustness in public transportation networks of Latin American cities",
+"url": "https://doi.org/10.1007/s44327-026-00321-0",
+"venue": "Discover Cities (2026)"
+},
+{
+"n": 59,
+"img": "figs/fig59.jpg",
+"fig": 13,
+"title": "Thermodynamic description of wealth inequality in the world",
+"url": "https://doi.org/10.3390/complexities2030020",
+"venue": "Complexities (2026)"
+},
+{
+"n": 60,
+"img": "figs/fig60.jpg",
+"fig": 2,
+"title": "Complex spacing ratio statistics in the partially open asymmetric quantum baker map",
+"url": "https://doi.org/10.1103/q5fx-y7zr",
+"venue": "Phys. Rev. E (2026)"
+},
+{
+"n": 60,
+"img": "figs/fig60b.jpg",
+"fig": 1,
+"title": "Complex spacing ratio statistics in the partially open asymmetric quantum baker map",
+"url": "https://doi.org/10.1103/q5fx-y7zr",
+"venue": "Phys. Rev. E (2026)"
+},
+{
+"n": 61,
+"img": "figs/fig61.jpg",
+"fig": 5,
+"title": "Socioeconomic mixing in urban parks: A complex systems perspective on three Argentine cities",
+"url": "https://doi.org/10.21203/rs.3.rs-9905023/v1",
+"venue": "Submitted to Discover Cities"
+},
+{
+"n": 62,
+"img": "figs/fig62.jpg",
+"fig": 1,
+"title": "Fractal Period Locking and Action-Quantized Resonances in the Open Quantum Baker Map",
+"url": "https://arxiv.org/abs/2610.23573",
+"venue": "Submitted to Phys. Rev. E"
+}
+]
+</script>
+<!--/AUTO:CARRUSEL-->
+<script>
+(function () {
+  var el = document.getElementById('fig-data');
+  var figs = el ? JSON.parse(el.textContent) : [];
+  var car = document.getElementById('car');
+  if (!figs.length) { document.getElementById('figures').hidden = true; return; }
+  for (var i = figs.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = figs[i]; figs[i] = figs[j]; figs[j] = t; }
+  var DELAY = 4500, stage = document.getElementById('car-stage'), title = document.getElementById('car-title'),
+      meta = document.getElementById('car-meta'), bar = document.getElementById('car-bar');
+  var slides = figs.map(function (f) {
+    var a = document.createElement('a');
+    a.className = 'car-slide'; a.href = f.url; a.target = '_blank'; a.rel = 'noopener'; a.tabIndex = -1;
+    a.setAttribute('aria-label', 'Open paper: ' + f.title);
+    var img = document.createElement('img');
+    img.alt = (f.fig ? 'Figure ' + f.fig + ' of ' : 'Figure from ') + '\u201c' + f.title + '\u201d';
+    img.loading = 'lazy'; img.decoding = 'async'; img.dataset.src = f.img;
+    a.appendChild(img); stage.appendChild(a); return a;
+  });
+  function load(k) { var im = slides[(k + slides.length) % slides.length].firstChild; if (!im.src) im.src = im.dataset.src; }
+  var cur = 0, timer = null, t0 = 0, paused = false, hidden = true;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(i) {
+    slides[cur].classList.remove('on'); slides[cur].tabIndex = -1;
+    cur = (i + slides.length) % slides.length;
+    load(cur); load(cur + 1); load(cur - 1);
+    slides[cur].classList.add('on'); slides[cur].tabIndex = 0;
+    var f = figs[cur];
+    title.textContent = f.title; title.href = f.url;
+    meta.textContent = f.venue + ' \u00b7 ' + (cur + 1) + ' / ' + slides.length;
+    restart();
+  }
+  function restart() { clearTimeout(timer); t0 = performance.now(); if (!paused && !hidden) timer = setTimeout(function () { show(cur + 1); }, DELAY); }
+  function tick(now) { bar.style.width = (paused || hidden || reduce) ? '0' : Math.min(100, (now - t0) / DELAY * 100) + '%'; requestAnimationFrame(tick); }
+  function pause(p) { paused = p; restart(); }
+  var inView = false;
+  function upd() { hidden = !inView || document.hidden; restart(); }
+  document.getElementById('car-prev').onclick = function () { show(cur - 1); };
+  document.getElementById('car-next').onclick = function () { show(cur + 1); };
+  car.addEventListener('mouseenter', function () { pause(true); });
+  car.addEventListener('mouseleave', function () { pause(false); });
+  car.addEventListener('focusin', function () { pause(true); });
+  car.addEventListener('focusout', function (e) { if (!car.contains(e.relatedTarget)) pause(false); });
+  car.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { show(cur - 1); e.preventDefault(); }
+    else if (e.key === 'ArrowRight') { show(cur + 1); e.preventDefault(); }
+  });
+  var sx = null;
+  stage.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (sx === null) return; var dx = e.changedTouches[0].clientX - sx; sx = null;
+    if (Math.abs(dx) > 40) { e.preventDefault(); show(cur + (dx < 0 ? 1 : -1)); }
+  });
+  // solo avanza cuando el carrusel está en pantalla y la pestaña visible
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { inView = es[0].isIntersecting; upd(); }).observe(car);
+  } else { inView = true; upd(); }
+  document.addEventListener('visibilitychange', upd);
+  show(0); requestAnimationFrame(tick);
+})();
+</script>
 </section>
 
 <section id="positions">
@@ -536,34 +1261,34 @@
       <span class="pub-cites">Cited by 30</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">22.</span> <a href="https://doi.org/10.4249/scholarpedia.9860" target="_blank" rel="noopener">The Quantum Baker Map</a></span>
-      <span class="pub-journal"><b>L. Ermann</b>, M. Saraceno · Scholarpedia 7(12), 9860 (2012)</span>
-      <span class="pub-cites">Cited by 2</span>
-    </div>
-    <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">21.</span> <a href="https://doi.org/10.1088/1367-2630/15/12/123004" target="_blank" rel="noopener">Quantum Gibbs distribution from dynamical thermalization in classical nonlinear lattices</a></span>
+      <span class="pub-title"><span class="pub-num">22.</span> <a href="https://doi.org/10.1088/1367-2630/15/12/123004" target="_blank" rel="noopener">Quantum Gibbs distribution from dynamical thermalization in classical nonlinear lattices</a></span>
       <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · New J. Phys. 15, 123004 (2013)</span>
       <span class="pub-cites">Cited by 16</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">20.</span> <a href="https://doi.org/10.1140/epjb/e2013-31090-8" target="_blank" rel="noopener">Spectral properties of Google matrix of Wikipedia and other networks</a></span>
+      <span class="pub-title"><span class="pub-num">21.</span> <a href="https://doi.org/10.1140/epjb/e2013-31090-8" target="_blank" rel="noopener">Spectral properties of Google matrix of Wikipedia and other networks</a></span>
       <span class="pub-journal"><b>L. Ermann</b>, K.M. Frahm, D.L. Shepelyansky · Eur. Phys. J. B 86, 193 (2013)</span>
       <span class="pub-cites">Cited by 37</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">19.</span> <a href="https://doi.org/10.1103/physreve.87.022912" target="_blank" rel="noopener">Symmetry breaking for ratchet transport in presence of interactions and magnetic field</a></span>
+      <span class="pub-title"><span class="pub-num">20.</span> <a href="https://doi.org/10.1103/physreve.87.022912" target="_blank" rel="noopener">Symmetry breaking for ratchet transport in presence of interactions and magnetic field</a></span>
       <span class="pub-journal"><b>L. Ermann</b>, A.D. Chepelianskii, D.L. Shepelyansky · Phys. Rev. E 87, 022912 (2013)</span>
       <span class="pub-cites">Cited by 4</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">18.</span> <a href="https://doi.org/10.1103/physreve.87.012909" target="_blank" rel="noopener">Classical transients and the support of open quantum maps</a></span>
+      <span class="pub-title"><span class="pub-num">19.</span> <a href="https://doi.org/10.1103/physreve.87.012909" target="_blank" rel="noopener">Classical transients and the support of open quantum maps</a></span>
       <span class="pub-journal">G.G. Carlo, D.A. Wisniacki, <b>L. Ermann</b>, R.M. Benito, F. Borondo · Phys. Rev. E 87, 012909 (2013)</span>
       <span class="pub-cites">Cited by 11</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">17.</span> <a href="https://doi.org/10.1016/j.physleta.2012.10.056" target="_blank" rel="noopener">Ecological analysis of the world trade</a></span>
+      <span class="pub-title"><span class="pub-num">18.</span> <a href="https://doi.org/10.1016/j.physleta.2012.10.056" target="_blank" rel="noopener">Ecological analysis of the world trade</a></span>
       <span class="pub-journal"><b>L. Ermann</b>, D.L. Shepelyansky · Phys. Lett. A 377, 250 (2013)</span>
       <span class="pub-cites">Cited by 29</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">17.</span> <a href="https://doi.org/10.4249/scholarpedia.9860" target="_blank" rel="noopener">The Quantum Baker Map</a></span>
+      <span class="pub-journal"><b>L. Ermann</b>, M. Saraceno · Scholarpedia 7(12), 9860 (2012)</span>
+      <span class="pub-cites">Cited by 2</span>
     </div>
     <div class="pub-item">
       <span class="pub-title"><span class="pub-num">16.</span> <a href="https://doi.org/10.1088/1751-8113/45/27/275101" target="_blank" rel="noopener">Towards two-dimensional search engines</a></span>
@@ -616,14 +1341,14 @@
       <span class="pub-cites">Cited by 54</span>
     </div>
     <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">6.</span> <a href="https://doi.org/10.1103/physreve.79.016215" target="_blank" rel="noopener">Distribution of resonances in the quantum open baker map</a></span>
-      <span class="pub-journal">J.M. Pedrosa, G.G. Carlo, D. Wisniacki, <b>L. Ermann</b> · Phys. Rev. E 79, 016215 (2009)</span>
-      <span class="pub-cites">Cited by 23</span>
-    </div>
-    <div class="pub-item">
-      <span class="pub-title"><span class="pub-num">5.</span> <a href="https://doi.org/10.1103/physreve.79.056201" target="_blank" rel="noopener">Behavior of the current in the asymmetric quantum multibaker map</a></span>
+      <span class="pub-title"><span class="pub-num">6.</span> <a href="https://doi.org/10.1103/physreve.79.056201" target="_blank" rel="noopener">Behavior of the current in the asymmetric quantum multibaker map</a></span>
       <span class="pub-journal"><b>L. Ermann</b>, G.G. Carlo, M. Saraceno · Phys. Rev. E 79, 056201 (2009)</span>
       <span class="pub-cites">Cited by 5</span>
+    </div>
+    <div class="pub-item">
+      <span class="pub-title"><span class="pub-num">5.</span> <a href="https://doi.org/10.1103/physreve.79.016215" target="_blank" rel="noopener">Distribution of resonances in the quantum open baker map</a></span>
+      <span class="pub-journal">J.M. Pedrosa, G.G. Carlo, D. Wisniacki, <b>L. Ermann</b> · Phys. Rev. E 79, 016215 (2009)</span>
+      <span class="pub-cites">Cited by 23</span>
     </div>
     <div class="pub-item">
       <span class="pub-title"><span class="pub-num">4.</span> <a href="https://doi.org/10.1103/physreve.78.036221" target="_blank" rel="noopener">A periodic orbit basis for the quantum baker map</a></span>
@@ -753,8 +1478,11 @@
 </section>
 
 <footer>
-  © 2026 Leonardo Ermann · Buenos Aires, Argentina<!--AUTO:FECHA--> · Last updated 13 Nov 2026<!--/AUTO:FECHA-->
+  © 2026 Leonardo Ermann · Buenos Aires, Argentina<!--AUTO:FECHA--> · Last updated 22 Nov 2026<!--/AUTO:FECHA-->
 </footer>
 
+<!-- Contador de visitas: panel en https://leoermann.goatcounter.com -->
+<script data-goatcounter="https://leoermann.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
